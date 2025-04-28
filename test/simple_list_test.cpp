@@ -37,7 +37,7 @@ TEST(SimpleListTest, SizeFunction) {
 // 测试链表的数据完整性
 TEST(SimpleListTest, DataIntegrity) {
     // 创建一个链表：10 -> 20 -> 30
-    SimpleList node3(30);
+    SimpleList node3(30, nullptr);
     SimpleList node2(20, &node3);
     SimpleList node1(10, &node2);
 
