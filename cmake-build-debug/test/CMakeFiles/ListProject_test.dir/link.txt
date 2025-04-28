@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/ListProject_test.dir/LinkList_test.cpp.o -o ListProject_test  ../src/libListProject_lib.a ../lib/libgtest.a 

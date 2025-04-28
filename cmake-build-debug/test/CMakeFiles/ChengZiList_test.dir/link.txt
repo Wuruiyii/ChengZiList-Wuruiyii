@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/ChengZiList_test.dir/LinkList_test.cpp.o -o ChengZiList_test  ../src/libChengZiList_lib.a ../lib/libgtest.a 
