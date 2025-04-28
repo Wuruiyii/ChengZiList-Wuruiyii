@@ -11,7 +11,7 @@ foreach(TEST_SOURCE ${TEST_SOURCES})
     add_executable(${TEST_NAME} ${TEST_SOURCE})
 
     # 链接 Google Test 库
-    target_link_libraries(${TEST_NAME} gtest gtest_main)
+    target_link_libraries(${TEST_NAME} gtest gmock_main )
 
     # 注册测试
     gtest_discover_tests(${TEST_NAME}
