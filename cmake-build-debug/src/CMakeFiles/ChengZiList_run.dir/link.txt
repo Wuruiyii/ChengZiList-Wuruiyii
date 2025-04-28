@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/ChengZiList_run.dir/main.cpp.o -o ChengZiList_run 
