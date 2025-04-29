@@ -8,3 +8,8 @@ TEST(ExampleTest, BasicAssertions) {
 TEST(ExampleTest, StringComparison) {
     EXPECT_STREQ("hello", "hello");
 }
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
