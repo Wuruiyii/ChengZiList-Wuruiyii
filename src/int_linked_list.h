@@ -54,9 +54,83 @@
 //TODO(Project 1 - Task 5) Sentinel Head Node
 // 在原有基础上 实现有虚拟头结点的链表 并在必要的函数中进行维护
 
+#include<iostream>
+class IntLinkedList {
+private:
+    // 嵌套类：IntNode
+    class IntNode {
+    public:
+        int data_;
+        IntNode* next_;
 
-class A {
+        explicit IntNode(int data) : data_(data), next_(nullptr) {}
+    };
 
+    // 使用虚拟头节点 sentinel_
+    IntNode* sentinel_;
+    int size_;
+
+public:
+    // 构造函数：初始化带有虚拟头节点的链表
+    IntLinkedList() {
+        sentinel_ = new IntNode(0); // 虚拟节点数据无意义
+        size_ = 0;
+    }
+
+    // 析构函数：释放所有节点内存
+    ~IntLinkedList() {
+        IntNode* current = sentinel_->next_;
+        while (current != nullptr) {
+            IntNode* next = current->next_;
+            delete current;
+            current = next;
+        }
+        delete sentinel_;
+    }
+
+    // 在头部添加节点
+    void AddFirst(int data) {
+        IntNode* newNode = new IntNode(data);
+        newNode->next_ = sentinel_->next_;
+        sentinel_->next_ = newNode;
+        ++size_;
+    }
+
+    // 获取第一个节点的数据
+    int GetFirst() const {
+        if (size_ == 0) {
+            throw std::out_of_range("List is empty");
+        }
+        return sentinel_->next_->data_;
+    }
+
+    // 在尾部添加节点
+    void AddLast(int data) {
+        IntNode* current = sentinel_;
+        while (current->next_ != nullptr) {
+            current = current->next_;
+        }
+        current->next_ = new IntNode(data);
+        ++size_;
+    }
+
+    // 获取链表大小 O(1)
+    int Size() const {
+        return size_;
+    }
+
+    // 递归方式获取大小（可选）
+    int SizeRecursive() const {
+        return sizeRecursiveHelper(sentinel_->next_);
+    }
+
+private:
+    // 递归辅助函数
+    int sizeRecursiveHelper(IntNode* node) const {
+        if (node == nullptr) return 0;
+        return 1 + sizeRecursiveHelper(node->next_);
+    }
 };
+
 
 #endif //CHENGZILIST_INT_LINKED_LIST_H

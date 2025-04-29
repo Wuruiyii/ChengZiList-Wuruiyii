@@ -76,4 +76,9 @@ TEST(SimpleListTest, EmptyList) {
     EXPECT_EQ(head, nullptr);
 }
 
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+
 #endif // SIMPLE_LIST_H
