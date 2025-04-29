@@ -5,7 +5,7 @@
 // TODO(QingZhiLiangCheng): 实现Simple_list单元测试
 #include "gtest/gtest.h"
 #include "../src/simple_list.h"
-//TODO(Project 1): 删除#indef标签
+//TODO(Project 0): 删除#indef标签
 #ifdef ENABLE_TESTS
 // 测试SimpleList类的构造函数
 TEST(SimpleListTest, Constructor) {
@@ -37,7 +37,7 @@ TEST(SimpleListTest, SizeFunction) {
 // 测试链表的数据完整性
 TEST(SimpleListTest, DataIntegrity) {
     // 创建一个链表：10 -> 20 -> 30
-    SimpleList node3(30);
+    SimpleList node3(30, nullptr);
     SimpleList node2(20, &node3);
     SimpleList node1(10, &node2);
 
