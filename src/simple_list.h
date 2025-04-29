@@ -4,7 +4,7 @@
 
 #ifndef CHENGZILIST_SIMPLE_LIST_H
 #define CHENGZILIST_SIMPLE_LIST_H
-// TODO(Project 1): 实现一个简单的满足int类型的SimpleList类并实现其基本功能
+// TODO(Project 0): 实现一个简单的满足int类型的SimpleList类并实现其基本功能
 // SimpleList是一个简单的链表节点类，包含两个成员变量：
 // - data_: 存储的数据
 // - next_: 指向下一个节点的指针
